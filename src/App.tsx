@@ -1,7 +1,9 @@
+import ProductList from "./sandbox/day1/ProductList.tsx";
 
-
-function App() {
-  return <main>react-lab</main>
+export default function App() {
+    return (
+        <div className="app">
+            <ProductList/>
+        </div>
+    );
 }
-
-export default App
