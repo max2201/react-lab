@@ -1,7 +1,10 @@
+import ProductList from "./sandbox/day1/ProductList";
+import { products } from "./sandbox/day1/products";
 
-
-function App() {
-  return <main>react-lab</main>
+export default function App() {
+    return (
+        <div className="app">
+            <ProductList products={products || []} />
+        </div>
+    );
 }
-
-export default App
