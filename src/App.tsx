@@ -1,10 +1,13 @@
-import ProductList from "./sandbox/day1/ProductList";
-import { products } from "./sandbox/day1/products";
+import Counter from "./sandbox/day2/Counter.tsx";
+import Form from "./sandbox/day2/Form.tsx";
+import ProductList from "./sandbox/day2/ProductList.tsx";
 
 export default function App() {
     return (
         <div className="app">
-            <ProductList products={products || []} />
+           <Counter/>
+           <Form/>
+            <ProductList/>
         </div>
     );
 }
