@@ -1,30 +1,19 @@
-import {useState} from 'react';
+import { useState } from "react";
 
 export default function Form() {
     const [person, setPerson] = useState({
-        name: 'Niki de Saint Phalle',
-        email: 'asdada@asdas.ru',
+        name: "Niki de Saint Phalle",
+        email: "asdada@asdas.ru",
         subscribed: false,
     });
 
-    function handleNameChange(e: React.ChangeEvent<HTMLInputElement>) {
-        setPerson({
-            ...person,
-            name: e.target.value
-        });
-    }
-
-    function handleEmailChange(e: React.ChangeEvent<HTMLInputElement>) {
-        setPerson({
-            ...person,
-            email: e.target.value
-        });
-    }
-
-    function handleSubscribeChange(e: React.ChangeEvent<HTMLInputElement>) {
-        setPerson({
-            ...person,
-            subscribed: e.target.checked
+    function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+        const { name, type, value, checked } = e.target;
+        setPerson((prev) => {
+            return {
+                ...prev,
+                [name]: type === "checkbox" ? checked : value,
+            };
         });
     }
 
@@ -33,23 +22,26 @@ export default function Form() {
             <label>
                 Name:
                 <input
+                    name="name"
                     value={person.name}
-                    onChange={handleNameChange}
+                    onChange={handleChange}
                 />
             </label>
             <label>
                 Email:
                 <input
+                    name="email"
                     value={person.email}
-                    onChange={handleEmailChange}
+                    onChange={handleChange}
                 />
             </label>
             <label>
                 Subscribe:
                 <input
+                    name="subscribed"
                     type="checkbox"
                     checked={person.subscribed}
-                    onChange={handleSubscribeChange}
+                    onChange={handleChange}
                 />
             </label>
         </>
