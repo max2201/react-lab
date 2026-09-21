@@ -1,10 +1,14 @@
-import ProductList from "./sandbox/day1/ProductList";
-import { products } from "./sandbox/day1/products";
+import { CounterRight, CounterWrong } from "./sandbox/day2/Counter.tsx";
+import Form from "./sandbox/day2/Form.tsx";
+import ShoppingList from "./sandbox/day2/ShoppingList.tsx";
 
 export default function App() {
     return (
         <div className="app">
-            <ProductList products={products || []} />
+            <CounterWrong />
+            <CounterRight />
+            <Form />
+            <ShoppingList />
         </div>
     );
 }
